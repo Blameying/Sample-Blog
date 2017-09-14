@@ -1,0 +1,25 @@
+<!--extend from base layout-->
+{% extends "base.html"%}
+
+{%block content%}
+<h1>登录</h1>
+<form action="" method="post" name="login">
+    {{form.hidden_tag()}}
+    <p>
+            请输入你的用户名：<br>
+            {{form.username(size=80)}}<br>
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}<br>
+    </p>
+    <p>
+        请输入你的密码：<br>
+        {{form.password(size=80)}}<br>
+        {% for error in form.password.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}<br>
+    </p>
+    <p>{{form.remember_me}} 记住我</p>
+    <p><input type="submit" value = "Sign In"></p>
+</form>
+{%endblock%}

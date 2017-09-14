@@ -1,0 +1,22 @@
+
+<html>
+        <head>
+          {% if title %}
+          <title>{{title}}'s Blog</title>
+          {% else %}
+          <title>Monkey Li's Blog</title>
+          {% endif %}
+        </head>
+        <body>
+          <div class="container">
+            {% for message in get_flashed_messages() %}
+            <div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ message }}
+            </div>
+            {% endfor %}
+          </div>
+          {% block content %}{% endblock %}
+        </body>
+      </html>
+      
