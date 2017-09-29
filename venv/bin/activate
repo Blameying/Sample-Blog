@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/blame/Python3.6_Environment/venv"
+VIRTUAL_ENV="/home/blamer/Projects/Python3.6_Environment/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

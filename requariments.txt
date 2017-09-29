@@ -3,6 +3,7 @@ flask-login
 flask-openid
 flask-mail
 flask-sqlalchemy
+flask_bootstrap'
 sqlalchemy-migrate
 flask-whooshalchemy
 flask-wtf
@@ -10,3 +11,4 @@ flask-babel
 guess_language
 flipflop
 coverage
+flask_bcrypt

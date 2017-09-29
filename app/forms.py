@@ -5,8 +5,8 @@ from wtforms.validators import DataRequired,Length,EqualTo,URL
 from app.models import *
 
 class LoginForm(Form):
-    username = StringField('姓名',validators=[DataRequired(),Length(max=255)])
-    password =StringField('密码:',validators=[DataRequired(),Length(max=255)])
+    username=StringField('用户名',[DataRequired(),Length(max=255)])
+    password=PasswordField('密码',[DataRequired(),Length(max=255,min=8)])
     remember_me = BooleanField('记住我',default=False)
 
     def validate(self):
@@ -22,7 +22,7 @@ class LoginForm(Form):
             self.username.errors.append('Invalid username or password')
             return False
             
-        if not self.user.check_password(self.password.data):
+        if not user.check_password(self.password.data):
             self.username.errors.append(
                'Invalid username or password' 
             )

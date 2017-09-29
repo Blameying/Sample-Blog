@@ -7,7 +7,7 @@ app=Flask(__name__)
 app.config.from_object('config')
 db=SQLAlchemy(app)
 bcrypt.init_app(app)
-bootstrap = Bootstrap
+bootstrap = Bootstrap(app)
 
 
 

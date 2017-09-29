@@ -1,22 +1,44 @@
-
-<html>
-        <head>
-          {% if title %}
-          <title>{{title}}'s Blog</title>
-          {% else %}
-          <title>Monkey Li's Blog</title>
-          {% endif %}
-        </head>
-        <body>
-          <div class="container">
-            {% for message in get_flashed_messages() %}
-            <div class="alert alert-warning">
-                <button type="button" class="close" data-dismiss="alert">&times;</button>
-                {{ message }}
-            </div>
-            {% endfor %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Blame">
+    <link rel="icon" href="{{url_for('static',filename='QE.ico')}}">
+    <title>Blame's Blog</title>
+    {%block header%}{% endblock %}
+    <!-- Bootstrap CSS -->
+    <style>
+    .div22{margin-top:50px}
+    </style>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-md fixed-top navbar-static-top navbar-dark bg-dark">
+          <a class="navbar-brand" href="{{url_for('home')}}">Blame</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{{url_for('home')}}">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('new_post')}}">New<span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+            <a href="{{url_for('login')}}" class="btn btn-outline-success mt-2 mt-md-0" role="button">Login</a>
           </div>
-          {% block content %}{% endblock %}
-        </body>
-      </html>
-      
+        </nav>
+    <div class="div22"></div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {% block content %}{% endblock %}
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  </body>
+</html>
