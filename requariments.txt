@@ -3,7 +3,7 @@ flask-login
 flask-openid
 flask-mail
 flask-sqlalchemy
-flask_bootstrap'
+flask_bootstrap
 sqlalchemy-migrate
 flask-whooshalchemy
 flask-wtf
